@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\garchi\GarchiPageController;
+use App\Http\Controllers\GarchiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get("/garchipage", [GarchiPageController::class, "index"]);
-Route::get("/garchipage/{slug}", [GarchiPageController::class, "index"]);
+
+Route::get("/{slug}", [GarchiController::class, "index"])->where("slug", ".*");

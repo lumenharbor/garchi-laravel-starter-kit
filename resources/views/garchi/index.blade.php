@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{$page['title'] ?? 'Garchi Page'}}</title>
+    <title>{{$page->title ?? 'Garchi Page'}}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,7 +17,7 @@
 
 <body class="antialiased">
     <main>
-        @foreach($page['sections'] ?? [] as $section)
+        @foreach($page->sections ?? [] as $section)
         <x-garchi.GarchiComponent :section="$section" />
         @endforeach
     </main>
