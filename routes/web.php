@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/about', function () {
     return view('welcome');
 });
 
 
-Route::get("/{slug}", [GarchiController::class, "index"])->where("slug", ".*");
+Route::get("/{slug?}", [GarchiController::class, "index"])->where("slug", ".*");
