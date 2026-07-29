@@ -41,6 +41,6 @@
     @endif
 
     {{-- Bottom accent line on hover --}}
-    <div class="absolute bottom-0 left-7 right-7 h-px bg-gradient-to-r from-transparent via-violet-400/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+    <div class="absolute bottom-0 left-7 right-7 h-px bg-linear-to-r from-transparent via-violet-400/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
 
 </{{ $tag }}>

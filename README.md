@@ -40,32 +40,12 @@ php artisan serve
 
 Visit `http://localhost:8000` to see the example page rendering live content.
 
-## What's inside
 
-| Path | What it does |
-|------|--------------|
-| `app/Services/GarchiService.php` | API client — fetch pages, sections, data items, assets |
-| `resources/views/garchi/index.blade.php` | Example page rendering a Garchi page |
-| `resources/components/garchi/` | Blade components for common section types |
-| `config/garchi.php` | Configuration |
 
-### Fetching a page
-
-```php
-$page = app(GarchiService::class)->getPage('home');
-```
-
-### Rendering sections
-
-```blade
-@foreach ($page->sections as $section)
-    <x-garchi.section :section="$section" />
-@endforeach
-```
 
 ## Let an agent build the content
 
-Garchi ships an MCP server, so an AI agent can create and edit content directly
+Garchi CMS ships an MCP server, so an AI agent can create and edit content directly
 — pages, section trees, structured data, images — while this starter kit
 renders it.
 
@@ -74,7 +54,7 @@ Add the server to your MCP client (Claude Desktop, Claude Code, Cursor):
 ```json
 {
   "mcpServers": {
-    "garchi-cms": {
+    "GarchiCMS": {
       "url": "https://garchi.co.uk/mcp-oauth"
     }
   }
