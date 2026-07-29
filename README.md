@@ -1,54 +1,97 @@
+# Garchi CMS — Laravel Starter Kit
 
-# Using this repo
+A Laravel starter kit for [Garchi CMS](https://garchi.co.uk), a cloud-based
+headless CMS with a full-write MCP server. Clone it, add an API key, and you
+have a Laravel app rendering content from Garchi — with the option of letting
+an AI agent author that content for you.
 
-This repo is a starter kit and it is meant to be used for a new project. In case you want to integrate [Garchi CMS](https://garchi.co.uk) in your existing project, you can always use this repo as a reference to do so.
+Use it as the base for a new project, or as a reference for wiring Garchi into
+an existing one.
 
-To begin with provide your API key inside .env file.
+## Requirements
+
+- PHP 8.2+
+- Composer
+- A free Garchi account — [sign up](https://garchi.co.uk)
+
+## Quick start
+
+```bash
+git clone https://github.com/YOUR_ORG/garchi-laravel-starter.git
+cd garchi-laravel-starter
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+Add your Garchi credentials to `.env`:
 
 ```env
 GARCHI_API_URL=https://garchi.co.uk/api/v2
-GARCHI_API_KEY=yourapikey
+GARCHI_API_KEY=your_api_key
+GARCHI_SPACE_UID=your_space_uid
 ```
 
-Checkout /app/Services/GarchiService.php for helper functions.
+Your API key is in the Garchi dashboard under Settings → API Keys.
 
-An example page could be found at resources/views/garchi/index.blade.php
+```bash
+php artisan serve
+```
 
-There are some example components added to demonstrate the usage. 
+Visit `http://localhost:8000` to see the example page rendering live content.
 
-You can find them at resources/components/garchi
+## What's inside
 
+| Path | What it does |
+|------|--------------|
+| `app/Services/GarchiService.php` | API client — fetch pages, sections, data items, assets |
+| `resources/views/garchi/index.blade.php` | Example page rendering a Garchi page |
+| `resources/components/garchi/` | Blade components for common section types |
+| `config/garchi.php` | Configuration |
 
-# Garchi CMS
+### Fetching a page
 
-Garchi CMS is a cloud based light weight headless CMS. Here are some useful links
+```php
+$page = app(GarchiService::class)->getPage('home');
+```
 
-- [Website](https://garchi.co.uk)
+### Rendering sections
+
+```blade
+@foreach ($page->sections as $section)
+    <x-garchi.section :section="$section" />
+@endforeach
+```
+
+## Let an agent build the content
+
+Garchi ships an MCP server, so an AI agent can create and edit content directly
+— pages, section trees, structured data, images — while this starter kit
+renders it.
+
+Add the server to your MCP client (Claude Desktop, Claude Code, Cursor):
+
+```json
+{
+  "mcpServers": {
+    "garchi-cms": {
+      "url": "https://garchi.co.uk/mcp-oauth"
+    }
+  }
+}
+```
+
+Then try: *"Run prerequisites for my Garchi space, then create an about page
+with a hero and three feature sections."* Refresh your Laravel app and it's
+there.
+
+## Links
+
 - [Documentation](https://garchi.co.uk/documentation)
-- [API Docs](https://garchi.co.uk/docs)
-- [Usage with Laravel](https://garchi.co.uk/documentation/1.0/headlessweb/laravel)
+- [Laravel usage guide](https://garchi.co.uk/documentation/1.0/usage/laravel)
+- [API reference](https://garchi.co.uk/docs)
+- Starter kits for [Next.js](https://github.com/lumenharbor/garchi-next-starter-kit) and [Nuxt](https://github.com/lumenharbor/garchi-nuxt-starter-kit)
 
+## Licence
 
-
-# About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-# Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
+MIT

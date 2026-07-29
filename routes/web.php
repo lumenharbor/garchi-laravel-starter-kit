@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\garchi\GarchiPageController;
+
 use App\Http\Controllers\GarchiController;
 use Illuminate\Support\Facades\Route;
 
