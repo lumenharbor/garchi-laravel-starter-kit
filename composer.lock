@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7d5cb79de6ccada344ed6f0a2934cb57",
+    "content-hash": "d8074464d9e08f6f7d92a4e68f1f7b55",
     "packages": [
         {
             "name": "brick/math",
@@ -645,16 +645,16 @@
         },
         {
             "name": "garchicms/garchi-sdk-php",
-            "version": "v1.0.4",
+            "version": "v1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/garchi040319/garchi-php-sdk.git",
-                "reference": "6574a5ae5a9d07e9139c7bc41ba020994f02929c"
+                "reference": "1a56982390f6e36fba38db2f976894b3611f3c35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/garchi040319/garchi-php-sdk/zipball/6574a5ae5a9d07e9139c7bc41ba020994f02929c",
-                "reference": "6574a5ae5a9d07e9139c7bc41ba020994f02929c",
+                "url": "https://api.github.com/repos/garchi040319/garchi-php-sdk/zipball/1a56982390f6e36fba38db2f976894b3611f3c35",
+                "reference": "1a56982390f6e36fba38db2f976894b3611f3c35",
                 "shasum": ""
             },
             "require": {
@@ -682,9 +682,9 @@
             "description": "A PHP SDK wrapper for the Garchi CMS API",
             "support": {
                 "issues": "https://github.com/garchi040319/garchi-php-sdk/issues",
-                "source": "https://github.com/garchi040319/garchi-php-sdk/tree/v1.0.4"
+                "source": "https://github.com/garchi040319/garchi-php-sdk/tree/v1.0.5"
             },
-            "time": "2026-05-19T18:01:55+00:00"
+            "time": "2026-10-21T19:49:17+00:00"
         },
         {
             "name": "graham-campbell/result-type",
