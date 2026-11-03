@@ -6,7 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "garchicms/garchi-sdk-php": "^1.0.5",
+        "garchicms/garchi-sdk-php": "^1.0.6",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^13.0",
         "laravel/sanctum": "^4.0",

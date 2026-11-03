@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d8074464d9e08f6f7d92a4e68f1f7b55",
+    "content-hash": "26b3247719cbf4c107e3298dcc812b9a",
     "packages": [
         {
             "name": "brick/math",
@@ -645,16 +645,16 @@
         },
         {
             "name": "garchicms/garchi-sdk-php",
-            "version": "v1.0.5",
+            "version": "v1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/garchi040319/garchi-php-sdk.git",
-                "reference": "1a56982390f6e36fba38db2f976894b3611f3c35"
+                "reference": "0061922abfdba11b110dc6fb9f38c57cd1361c3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/garchi040319/garchi-php-sdk/zipball/1a56982390f6e36fba38db2f976894b3611f3c35",
-                "reference": "1a56982390f6e36fba38db2f976894b3611f3c35",
+                "url": "https://api.github.com/repos/garchi040319/garchi-php-sdk/zipball/0061922abfdba11b110dc6fb9f38c57cd1361c3a",
+                "reference": "0061922abfdba11b110dc6fb9f38c57cd1361c3a",
                 "shasum": ""
             },
             "require": {
@@ -682,9 +682,9 @@
             "description": "A PHP SDK wrapper for the Garchi CMS API",
             "support": {
                 "issues": "https://github.com/garchi040319/garchi-php-sdk/issues",
-                "source": "https://github.com/garchi040319/garchi-php-sdk/tree/v1.0.5"
+                "source": "https://github.com/garchi040319/garchi-php-sdk/tree/v1.0.6"
             },
-            "time": "2026-10-21T19:49:17+00:00"
+            "time": "2026-11-03T21:17:29+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -8863,5 +8863,5 @@
         "php": "^8.2"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
